@@ -16,7 +16,7 @@ AKS_NAME=readywinter
 
 clear
 
-pe "az aks get-credentials -n ${AKS_NAME} -g ${RG_NAME}"
+pe "az aks get-credentials -n ${AKS_NAME} -g ${RG_NAME} --overwrite-existing"
 
 
 pe "k get nodes"
