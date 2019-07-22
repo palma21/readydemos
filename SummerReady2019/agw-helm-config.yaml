@@ -4,7 +4,7 @@
 # Specify which application gateway the ingress controller will manage
 #
 appgw:
-    subscriptionId: df4aff33-3507-48d9-a24c-3439ab6b3079
+    subscriptionId: dummy
     resourceGroup: secdemo-rg
     name: secdemoag
 
@@ -27,8 +27,8 @@ appgw:
 #   secretKey: ServicePrincipal.json
 armAuth:
     type: aadPodIdentity
-    identityResourceID: /subscriptions/df4aff33-3507-48d9-a24c-3439ab6b3079/resourcegroups/MC_secdemo-rg_secdemo_westus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/secdemoidentity
-    identityClientID: 0fe44e34-8030-4c4e-9a73-c94dee2cb6f8
+    identityResourceID: dummy
+    identityClientID: dummy
 
 ################################################################################
 # Specify if the cluster is RBAC enabled or not
@@ -38,4 +38,4 @@ rbac:
 ################################################################################
 # Specify aks cluster related information
 aksClusterConfiguration:
-    apiServerAddress: secdemo-secdemo-rg-df4aff-82a66a3e.hcp.westus2.azmk8s.io
+    apiServerAddress: dummy

@@ -4,5 +4,5 @@ metadata:
  name: secdemoidentity
 spec:
  type: 0
- ResourceID: /subscriptions/df4aff33-3507-48d9-a24c-3439ab6b3079/resourcegroups/MC_secdemo-rg_secdemo_westus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/secdemoidentity
- ClientID: 0fe44e34-8030-4c4e-9a73-c94dee2cb6f8
+ ResourceID: dummy
+ ClientID: dummy
