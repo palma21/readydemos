@@ -1,0 +1,41 @@
+# This file contains the essential configs for the ingress controller helm chart
+
+################################################################################
+# Specify which application gateway the ingress controller will manage
+#
+appgw:
+    subscriptionId: df4aff33-3507-48d9-a24c-3439ab6b3079
+    resourceGroup: secdemo-rg
+    name: secdemoag
+
+################################################################################
+# Specify which kubernetes namespace the ingress controller will watch
+# Default value is "default"
+#
+# kubernetes:
+#   watchNamespace: <namespace>
+
+################################################################################
+# Specify the authentication with Azure Resource Manager
+#
+# Two authentication methods are available:
+# - Option 1: AAD-Pod-Identity (https://github.com/Azure/aad-pod-identity)
+# - Option 2: ServicePrincipal as a kubernetes secret
+# armAuth:
+#   type: servicePrincipal
+#   secretName: secdemoag
+#   secretKey: ServicePrincipal.json
+armAuth:
+    type: aadPodIdentity
+    identityResourceID: /subscriptions/df4aff33-3507-48d9-a24c-3439ab6b3079/resourcegroups/MC_secdemo-rg_secdemo_westus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/secdemoidentity
+    identityClientID: 0fe44e34-8030-4c4e-9a73-c94dee2cb6f8
+
+################################################################################
+# Specify if the cluster is RBAC enabled or not
+rbac:
+    enabled: true
+
+################################################################################
+# Specify aks cluster related information
+aksClusterConfiguration:
+    apiServerAddress: secdemo-secdemo-rg-df4aff-82a66a3e.hcp.westus2.azmk8s.io
